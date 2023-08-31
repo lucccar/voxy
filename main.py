@@ -1,8 +1,8 @@
 import logging, os
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from app.api import routes
 from fastapi.middleware.cors import CORSMiddleware
+from .app.api import routes
 
 app = FastAPI(
     title="Voxy Word Counter",

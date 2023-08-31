@@ -8,9 +8,7 @@ class Words:
             return 1
         regex_delimiter_expression = "|".join(delimiters)
         words = re.split(regex_delimiter_expression, word)
-        words = list(filter(lambda w: w != "", words))
-        # regex_delimiter_expression = "|".join(corrected_delimiters)
-        # words = re.split(regex_delimiter_expression, word)
-        # words = list(filter(lambda w: w != "", words))
+        words = set(filter(lambda w: w != "", words))
+        words = list(map(lambda w: w.strip(), words))
 
         return len(words)
